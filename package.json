@@ -1,0 +1,26 @@
+{
+  "name": "user-profile-service",
+  "version": "1.0.0",
+  "description": "Microservice to serve API related with user profile data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranggarppb/user-profile-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranggarppb/user-profile-service/issues"
+  },
+  "homepage": "https://github.com/ranggarppb/user-profile-service#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2"
+  }
+}
