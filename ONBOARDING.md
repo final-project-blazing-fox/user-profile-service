@@ -66,22 +66,22 @@
             runs-on: ubuntu-latest
 
             steps:
-            - name: Check out Git repository
+            -   name: Check out Git repository
                 uses: actions/checkout@v2
 
-            - name: Set up Node.js
+            -   name: Set up Node.js
                 uses: actions/setup-node@v1
                 with:
-                node-version: 14.x
+                    node-version: 14.x
 
             # ESLint and Prettier must be in `package.json`
-            - name: Install Node.js dependencies
+            -   name: Install Node.js dependencies
                 run: npm ci
 
-            - name: Run linters
+            -   name: Run linters
                 uses: wearerequired/lint-action@v1
                 with:
-                prettier: true
+                    prettier: true
     ```
 
 14. Create **node.js.yml** file for testing workflow
@@ -104,25 +104,25 @@
                 postgres:
                     image: postgres
                     env:
-                    POSTGRES_USER: postgres
-                    POSTGRES_PASSWORD: postgres
-                    POSTGRES_DB: postgres
+                        POSTGRES_USER: postgres
+                        POSTGRES_PASSWORD: postgres
+                        POSTGRES_DB: postgres
                     options: --health-cmd pg_isready
-                    --health-interval 10s
-                    --health-timeout 5s
-                    --health-retries 5
+                        --health-interval 10s
+                        --health-timeout 5s
+                        --health-retries 5
                     ports:
                     - 5432:5432
 
             steps:
-            - name: Checkout repository code
-            uses: actions/checkout@v2
-            - name: Use Node.js 14
-            uses: actions/setup-node@v2
-            with:
-                node-version: 14.x
-            - name: Install dependencies
-            run: npm ci
+            -   name: Checkout repository code
+                uses: actions/checkout@v2
+            -   name: Use Node.js 14
+                uses: actions/setup-node@v2
+                with:
+                    node-version: 14.x
+            -   name: Install dependencies
+                run: npm ci
         #     - name: Install sequelize cli
         #       run: npm install -g sequelize-cli
         #     - name: Do migration
@@ -131,9 +131,9 @@
         #       run: sequelize db:seed:all --env test
         #     - name: Creating jwt secret file mock up
         #       run: echo "JWT_SECRET=ABCD" > .env
-            - run: npm run build --if-present
-            - name: Run testing
-            run: npm test
+            -   run: npm run build --if-present
+            -   name: Run testing
+                run: npm test
     ```
 
     You can use services to prepare the database for testing.
