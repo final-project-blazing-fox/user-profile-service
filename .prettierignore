@@ -28,6 +28,6 @@ doc/
 GH2SG.bookmarklet.js
 docker-images/grafana/config/provisioning/dashboards/sourcegraph/
 storybook-static/
-README.md
+*.md
 *config.js
 *.html
