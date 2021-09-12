@@ -138,8 +138,8 @@
 
     You can use services to prepare the database for testing.
     Actually you can use Github secret for the environment variables used in the workflow but rightnow we just use echo.
-
-15. Commit all your changes and push it
+15. Add build badge to README.md file by adding `![CI workflow](https://github.com/final-project-blazing-fox/{service_name}/actions/workflows/node.js.yml/badge.svg)` in README.md
+16. Commit all your changes and push it
 
 ## Creating Pull Requests
 
