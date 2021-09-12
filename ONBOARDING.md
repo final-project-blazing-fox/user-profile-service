@@ -1,6 +1,6 @@
 ## Repository Preparation
 
-0.  Fork the repository to your github and clone it from your github. Always create MR from your main repository to staging first!
+0.  Fork the repository to your Github and clone it from your Github. Always create MR from your main repository to staging first!
 1.  Initiate npm project by command:
     ```
     npm init -y
@@ -48,7 +48,7 @@
     npm install --save-dev --save-exact prettier
     ```
 11. Create .prettierignore file (see the https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/.prettierignore for reference) and add *.md , *config.js , \*.html
-12. Create .github/workflows directory to prepare github workflows
+12. Create .github/workflows directory to prepare Github workflows / actions
 13. Create **lint.yml** file (see https://github.com/marketplace/actions/lint-action for the reference) for lint checking workflow
 
     ```
@@ -137,6 +137,14 @@
     ```
 
     You can use services to prepare the database for testing.
-    Actually you can use github secret for the environment variables used in the workflow but rightnow we just use echo.
+    Actually you can use Github secret for the environment variables used in the workflow but rightnow we just use echo.
 
 15. Commit all your changes and push it
+
+## Creating Pull Requests
+
+1.  For convinience, you can disable Github action in your own repository (which is forked from https://github.com/final-project-blazing-fox/user-profile-service)
+2.  Create Pull Request from your Github repository to final-project-blazing-fox/user-profile-service staging branch
+3.  In your Pull Request title, make sure you explain the summary of the Pull Request
+4.  Choose reviewer, assignee, label, and projects
+5.  Link your Pull Request to the certain Issue by using "Closes #{something}" in Pull Request description. You can use comma to link to multiple issue (ex: Closes #1, Closes #2). See https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue for another keywords other than "Closes"
