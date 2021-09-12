@@ -141,7 +141,7 @@
     You can use services to prepare the database for testing.
     Actually you can use Github secret for the environment variables used in the workflow but rightnow we just use echo.
 15. Add build badge to README.md file by adding `![CI workflow](https://github.com/final-project-blazing-fox/{service_name}/actions/workflows/node.js.yml/badge.svg)` in README.md
-16. Add codecoverage badge to README.md by adding `[![codecov](https://codecov.io/gh/final-project-blazing-fox/user-profile-service/branch/main/graph/badge.svg?token=87YTXOU1DD)](https://codecov.io/gh/final-project-blazing-fox/{service_name})`
+16. Add codecoverage badge to README.md by adding `[![codecov](https://codecov.io/gh/final-project-blazing-fox/{service_name}/branch/main/graph/badge.svg?token={token})](https://codecov.io/gh/final-project-blazing-fox/{service_name})` (ask codecov admin for the badge url)
 17. Add open issues badge in README.md by adding `![GitHub issues](https://img.shields.io/github/issues-raw/final-project-blazing-fox/user-profile-service)`
 18. Add open Pull Request badge in README.md by adding `![GitHub pull requests](https://img.shields.io/github/issues-pr/final-project-blazing-fox/user-profile-service)`
 19. Commit all your changes and push it
