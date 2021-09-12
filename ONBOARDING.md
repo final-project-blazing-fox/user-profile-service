@@ -18,7 +18,7 @@
     npm install --save-dev @commitlint/{config-conventional,cli}
     npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
     ```
-    Details can be seen in https://github.com/conventional-changelog/commitlint
+    Details of the accepted commit format can be seen in https://github.com/conventional-changelog/commitlint
     For the convention of commit message see https://www.conventionalcommits.org/en/v1.0.0/
     Note: Use 'chore' keyword to commit everything not directly related with user interaction (ex: repository preparation, adding unit test framework, etc.)
 5.  Install jest unit testing with command
