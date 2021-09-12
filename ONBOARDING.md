@@ -134,12 +134,15 @@
             -   run: npm run build --if-present
             -   name: Run testing
                 run: npm test
+            -   name: Upload coverage to Codecov
+                uses: codecov/codecov-action@v1
     ```
 
     You can use services to prepare the database for testing.
     Actually you can use Github secret for the environment variables used in the workflow but rightnow we just use echo.
 15. Add build badge to README.md file by adding `![CI workflow](https://github.com/final-project-blazing-fox/{service_name}/actions/workflows/node.js.yml/badge.svg)` in README.md
-16. Commit all your changes and push it
+16. Add codecoverage badge to README.md by adding `![Codecov](https://codecov.io/gh/final-project-blazing-fox/{service_name})`
+17. Commit all your changes and push it
 
 ## Creating Pull Requests
 
