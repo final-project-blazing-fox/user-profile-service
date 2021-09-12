@@ -146,5 +146,5 @@
 1.  For convinience, you can disable Github action in your own repository (which is forked from https://github.com/final-project-blazing-fox/user-profile-service)
 2.  Create Pull Request from your Github repository to final-project-blazing-fox/user-profile-service staging branch
 3.  In your Pull Request title, make sure you explain the summary of the Pull Request
-4.  Choose reviewer, assignee, label, and projects
+4.  Choose **reviewer, assignee, label, milestone, and projects**
 5.  Link your Pull Request to the certain Issue by using "Closes #{something}" in Pull Request description. You can use comma to link to multiple issue (ex: Closes #1, Closes #2). See https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue for another keywords other than "Closes"
