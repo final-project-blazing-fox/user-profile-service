@@ -1,0 +1,34 @@
+[
+  {
+    "email": "viki.yaputra@gmail.com",
+    "password": "password",
+    "full_name": "Viki Yaputra",
+    "register_as": "designer",
+    "main_card_showoff": "aaaa",
+    "is_premium": true
+  },
+  {
+    "email": "aaa.aaa@gmail.com",
+    "password": "password",
+    "full_name": "aaa aaa",
+    "register_as": "designer",
+    "main_card_showoff": "aaa",
+    "is_premium": true
+  },
+  {
+    "email": "bbb.bbb@gmail.com",
+    "password": "password",
+    "full_name": "bbb bbb",
+    "register_as": "designer",
+    "main_card_showoff": "bbb",
+    "is_premium": false
+  },
+  {
+    "email": "ccc.ccc@gmail.com",
+    "password": "password",
+    "full_name": "ccc ccc",
+    "register_as": "designer",
+    "main_card_showoff": "ccc",
+    "is_premium": false
+  }
+]
