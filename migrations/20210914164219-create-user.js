@@ -19,6 +19,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      birth_date: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      gender: {
+        allowNull: false,
+        type: Sequelize.ENUM("male", "female"),
+      },
       register_as: {
         type: Sequelize.STRING,
       },

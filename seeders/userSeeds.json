@@ -3,6 +3,8 @@
     "email": "viki.yaputra@gmail.com",
     "password": "password",
     "full_name": "Viki Yaputra",
+    "birth_date": "1986-11-25T13:53:22.317Z",
+    "gender": "male",
     "register_as": "designer",
     "main_card_showoff": "aaaa",
     "is_premium": true
@@ -11,6 +13,8 @@
     "email": "aaa.aaa@gmail.com",
     "password": "password",
     "full_name": "aaa aaa",
+    "birth_date": "1986-11-25T13:53:22.317Z",
+    "gender": "male",
     "register_as": "designer",
     "main_card_showoff": "aaa",
     "is_premium": true
@@ -19,6 +23,8 @@
     "email": "bbb.bbb@gmail.com",
     "password": "password",
     "full_name": "bbb bbb",
+    "birth_date": "1986-11-25T13:53:22.317Z",
+    "gender": "male",
     "register_as": "designer",
     "main_card_showoff": "bbb",
     "is_premium": false
@@ -27,6 +33,8 @@
     "email": "ccc.ccc@gmail.com",
     "password": "password",
     "full_name": "ccc ccc",
+    "birth_date": "1986-11-25T13:53:22.317Z",
+    "gender": "male",
     "register_as": "designer",
     "main_card_showoff": "ccc",
     "is_premium": false

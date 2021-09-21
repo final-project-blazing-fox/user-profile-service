@@ -17,14 +17,35 @@ module.exports = (sequelize, DataTypes) => {
       email: DataTypes.STRING,
       password: DataTypes.STRING,
       full_name: DataTypes.STRING,
+      birth_date: DataTypes.DATE,
+      gender: DataTypes.ENUM("male", "female"),
       register_as: DataTypes.STRING,
       main_card_showoff: DataTypes.STRING,
       is_premium: DataTypes.BOOLEAN,
     },
     {
       hooks: {
-        beforeCreate(instance, options) {
+        beforeCreate: (instance, options) => {
           instance.password = hashPassword(instance.password);
+
+          let fixName = instance.full_name.toLowerCase().split(" ");
+          for (let i = 0; i < fixName.length; i++) {
+            fixName[i] =
+              fixName[i].charAt(0).toUpperCase() + fixName[i].substring(1);
+          }
+
+          instance.full_name = fixName.join(" ");
+        },
+        beforeUpdate: (instance, options) => {
+          instance.password = hashPassword(instance.password);
+
+          let fixName = instance.full_name.toLowerCase().split(" ");
+          for (let i = 0; i < fixName.length; i++) {
+            fixName[i] =
+              fixName[i].charAt(0).toUpperCase() + fixName[i].substring(1);
+          }
+
+          instance.full_name = fixName.join(" ");
         },
       },
       sequelize,
