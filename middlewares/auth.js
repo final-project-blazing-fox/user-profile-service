@@ -26,7 +26,7 @@ function authorization(req, res, next) {
   User.findByPk(req.params.id)
     .then((data) => {
       if (!data) {
-        throw { name: "User not found!" };
+        throw { name: "User Not Found!" };
       } else {
         if (req.currentUser.id !== data.id) {
           throw { name: "Authorization Failed!" };
