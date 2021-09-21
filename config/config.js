@@ -16,7 +16,7 @@ module.exports = {
     dialect: "mysql"
   },
   production: {
-    use_env_variable: process.env.POSTGRES_URI,
+    use_env_variable: "POSTGRES_URI",
     dialectOptions: {
       ssl: {
         rejectUnauthorized: false
