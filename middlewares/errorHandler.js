@@ -2,7 +2,7 @@ function errorHandler(err, req, res, next) {
   let code;
   let message;
 
-  console.log(err.name);
+  console.log(err.name, "this is the error name");
 
   switch (err.name) {
     case "Username/Password Salah":

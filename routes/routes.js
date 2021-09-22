@@ -12,9 +12,12 @@ router.post("/login", UserController.login);
 
 router.use(authentication);
 router.get("/user", UserController.getUsers);
-router.use("/user/:id", authorization);
 router.get("/user/:id", UserController.findUser);
+
+router.use("/user/:id", authorization);
 router.patch("/user/:id", UserController.patchUser);
 router.delete("/user/:id", UserController.deleteUser);
+router.patch("/user/:id/upgrade", UserController.upgradeUser);
+router.patch("/user/:id/downgrade", UserController.downgradeUser);
 
 module.exports = router;

@@ -1,43 +1,57 @@
+const e = require("express");
 const { verifyToken } = require("../helpers/jwt");
 const { User } = require("../models/index");
 
 function authentication(req, res, next) {
   try {
     let decoded = verifyToken(req.headers.access_token);
-    User.findByPk(decoded.id).then((data) => {
-      if (!data) {
-        throw { name: "Authentication Failed" };
-      } else {
-        req.currentUser = {
-          id: data.id,
-          full_name: data.full_name,
-          email: data.email,
-          is_premium: data.is_premium,
-        };
-        next();
-      }
-    });
+    if (decoded.isAdmin) {
+      req.currentUser = {
+        isAdmin: true,
+      };
+      next();
+    } else {
+      User.findByPk(decoded.id).then((data) => {
+        if (!data) {
+          throw { name: "Authentication Failed" };
+        } else {
+          req.currentUser = {
+            id: data.id,
+            full_name: data.full_name,
+            email: data.email,
+            is_premium: data.is_premium,
+          };
+          console.log(req.currentUser, "From Authentication");
+          next();
+        }
+      });
+    }
   } catch (error) {
     throw { name: "Authentcation failed" };
   }
 }
 
 function authorization(req, res, next) {
-  User.findByPk(req.params.id)
-    .then((data) => {
-      if (!data) {
-        throw { name: "User Not Found!" };
-      } else {
-        if (req.currentUser.id !== data.id) {
-          throw { name: "Authorization Failed!" };
+  console.log(req.currentUser, "From Authorization");
+  if (req.currentUser.isAdmin) {
+    next();
+  } else {
+    User.findByPk(req.params.id)
+      .then((data) => {
+        if (!data) {
+          throw { name: "User Not Found!" };
         } else {
-          next();
+          if (req.currentUser.id !== data.id) {
+            throw { name: "Authorization Failed!" };
+          } else {
+            next();
+          }
         }
-      }
-    })
-    .catch((err) => {
-      next(err);
-    });
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
 }
 
 module.exports = { authentication, authorization };

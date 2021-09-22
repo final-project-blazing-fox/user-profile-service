@@ -33,6 +33,12 @@ module.exports = {
       main_card_showoff: {
         type: Sequelize.STRING,
       },
+      portfolio_link: {
+        type: Sequelize.STRING,
+      },
+      social_media_link: {
+        type: Sequelize.STRING,
+      },
       is_premium: {
         type: Sequelize.BOOLEAN,
       },

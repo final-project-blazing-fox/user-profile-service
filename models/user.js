@@ -21,6 +21,8 @@ module.exports = (sequelize, DataTypes) => {
       gender: DataTypes.ENUM("male", "female"),
       register_as: DataTypes.STRING,
       main_card_showoff: DataTypes.STRING,
+      portfolio_link: DataTypes.STRING,
+      social_media_link: DataTypes.STRING,
       is_premium: DataTypes.BOOLEAN,
     },
     {
