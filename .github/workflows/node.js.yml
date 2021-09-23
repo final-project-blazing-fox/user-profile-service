@@ -14,6 +14,11 @@ jobs:
 
     runs-on: ubuntu-latest
     
+    env:
+      DB_USERNAME_TEST: ${{ secrets.DB_USERNAME_TEST }}
+      DB_PASSWORD_TEST: ${{ secrets.DB_PASSWORD_TEST }}
+      DB_DATABASE_TEST: ${{ secrets.DB_DATABASE_TEST }}
+    
     services:
       postgres:
         image: postgres          
