@@ -5,9 +5,9 @@ function errorHandler(err, req, res, next) {
   console.log(err.name, "this is the error name");
 
   switch (err.name) {
-    case "Username/Password Salah":
+    case "Username/Password Incorrect":
       code = 401;
-      message = err.name;
+      message = "Username/Password Incorrect";
       break;
 
     case "SequelizeUniqueConstraintError":

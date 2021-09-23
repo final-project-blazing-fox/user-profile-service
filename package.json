@@ -4,8 +4,8 @@
   "description": "Microservice to serve API related with user profile data",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "jest --coverage",
+    "start": "node bin/server.js",
+    "test": "NODE_ENV=test && jest --coverage --runInBand --forceExit --detectOpenHandles",
     "prepare": "husky install"
   },
   "repository": {
@@ -35,6 +35,7 @@
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.12",
     "pg": "^8.7.1",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.6.5",
+    "supertest": "^6.1.6"
   }
 }

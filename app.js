@@ -16,6 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", router);
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+// if (!process.env.NODE_ENV === "test") {
+module.exports = app;
+// } else {
+//   app.listen(port, () => {
+//     console.log(`Example app listening at http://localhost:${port}`);
+//   });
+// }

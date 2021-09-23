@@ -3,6 +3,30 @@ const { verifyToken } = require("../helpers/jwt");
 const { User } = require("../models/index");
 
 function authentication(req, res, next) {
+  // let decoded = verifyToken(req.headers.access_token);
+  // if (decoded.isAdmin) {
+  //   req.currentUser = {
+  //     isAdmin: true,
+  //   };
+  //   next();
+  // } else {
+  //   User.findByPk(decoded.id)
+  //     .then((data) => {
+  //       if (!data) {
+  //         throw { name: "Authentication Failed" };
+  //       } else {
+  //         req.currentUser = {
+  //           id: data.id,
+  //           full_name: data.full_name,
+  //           email: data.email,
+  //           is_premium: data.is_premium,
+  //         };
+  //         console.log(req.currentUser, "From Authentication");
+  //         next();
+  //       }
+  //     })
+  //     .catch(next)
+  //   }
   try {
     let decoded = verifyToken(req.headers.access_token);
     if (decoded.isAdmin) {
@@ -11,23 +35,25 @@ function authentication(req, res, next) {
       };
       next();
     } else {
-      User.findByPk(decoded.id).then((data) => {
-        if (!data) {
-          throw { name: "Authentication Failed" };
-        } else {
-          req.currentUser = {
-            id: data.id,
-            full_name: data.full_name,
-            email: data.email,
-            is_premium: data.is_premium,
-          };
-          console.log(req.currentUser, "From Authentication");
-          next();
-        }
-      });
+      User.findByPk(decoded.id)
+        .then((data) => {
+          if (!data) {
+            throw { name: "Authentication Failed" };
+          } else {
+            req.currentUser = {
+              id: data.id,
+              full_name: data.full_name,
+              email: data.email,
+              is_premium: data.is_premium,
+            };
+            console.log(req.currentUser, "From Authentication");
+            next();
+          }
+        })
+        .catch(next);
     }
   } catch (error) {
-    throw { name: "Authentcation failed" };
+    next(error);
   }
 }
 

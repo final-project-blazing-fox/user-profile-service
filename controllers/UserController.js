@@ -14,7 +14,6 @@ class UserController {
       main_card_showoff,
       social_media_link,
       portfolio_link,
-      is_premium,
     } = req.body;
     User.create({
       email,
@@ -26,7 +25,7 @@ class UserController {
       main_card_showoff,
       social_media_link,
       portfolio_link,
-      is_premium,
+      is_premium: false,
     })
       .then((data) => {
         res.status(201).json({
@@ -147,13 +146,11 @@ class UserController {
         }
       })
       .then((data) => {
-        res
-          .status(200)
-          .json({
-            message: `User with id ${req.params.id} successfully modified`,
-            email: data.email,
-            updated: data.updatedAt,
-          });
+        res.status(200).json({
+          message: `User with id ${req.params.id} successfully modified`,
+          email: data.email,
+          updated: data.updatedAt,
+        });
       })
       .catch(next);
   }
@@ -185,12 +182,10 @@ class UserController {
       })
       .then((data) => {
         deletedData.message = `User with id ${req.params.id} successfully deleted!`;
-        res
-          .status(200)
-          .json({
-            deletedData,
-            message: `User with id ${req.params.id} successfully deleted!`,
-          });
+        res.status(200).json({
+          deletedData,
+          message: `User with id ${req.params.id} successfully deleted!`,
+        });
       })
       .catch((err) => {
         next(err);
@@ -211,14 +206,12 @@ class UserController {
             }
           })
           .then((data) => {
-            res
-              .status(200)
-              .json({
-                message: `User with id ${req.params.id} successfully upgraded`,
-                full_name: data.full_name,
-                email: data.email,
-                updated: data.updatedAt,
-              });
+            res.status(200).json({
+              message: `User with id ${req.params.id} successfully upgraded`,
+              full_name: data.full_name,
+              email: data.email,
+              updated: data.updatedAt,
+            });
           })
           .catch(next);
       } else {
@@ -243,14 +236,12 @@ class UserController {
             }
           })
           .then((data) => {
-            res
-              .status(200)
-              .json({
-                message: `User with id ${req.params.id} successfully downgraded`,
-                full_name: data.full_name,
-                email: data.email,
-                updated: data.updatedAt,
-              });
+            res.status(200).json({
+              message: `User with id ${req.params.id} successfully downgraded`,
+              full_name: data.full_name,
+              email: data.email,
+              updated: data.updatedAt,
+            });
           })
           .catch(next);
       } else {
