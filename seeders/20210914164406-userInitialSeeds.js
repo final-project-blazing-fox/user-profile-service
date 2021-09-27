@@ -1,7 +1,9 @@
 "use strict";
+const { hashPassword } = require("../helpers/bcrypt");
 
 const user = require("./userSeeds.json");
 user.forEach((user) => {
+  user.password = hashPassword(user.password);
   user.createdAt = new Date();
   user.updatedAt = new Date();
 });

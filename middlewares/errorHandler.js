@@ -25,9 +25,19 @@ function errorHandler(err, req, res, next) {
       message = "Authentication Failed";
       break;
 
-    case "Authorization Failed":
+    // case "Authorization Failed":
+    //   code = 401;
+    //   message = "Authorization Failed";
+    //   break;
+
+    case "User not Found":
+      code = 404;
+      message = "User not Found";
+      break;
+
+    case "Only admin can change membership status":
       code = 401;
-      message = "Authorization Failed";
+      message = "Only admin can change membership status";
       break;
 
     default:
@@ -35,6 +45,10 @@ function errorHandler(err, req, res, next) {
       message = "Internal Server Error";
       break;
   }
+  console.log(
+    { message, errDev: err },
+    "##################### HTTP ERROR RESPONSE #####################"
+  );
   res.status(code).json({ message, errDev: err });
 }
 

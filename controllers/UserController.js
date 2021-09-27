@@ -174,7 +174,7 @@ class UserController {
     })
       .then((data) => {
         if (!data) {
-          throw { name: "Delete Unsuccessful" };
+          throw { name: "User not Found" };
         } else {
           deletedData = data;
           return User.destroy({ where: { id: req.params.id } });
