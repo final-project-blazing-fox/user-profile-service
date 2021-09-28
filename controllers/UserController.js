@@ -64,7 +64,7 @@ class UserController {
               isAdmin: true,
             });
             console.log(adminToken);
-            res.status(200).json({ access_token: token });
+            res.status(200).json({ access_token: token, id: data.id });
           }
         }
       })
