@@ -64,7 +64,19 @@ class UserController {
               isAdmin: true,
             });
             console.log(adminToken);
-            res.status(200).json({ access_token: token, id: data.id });
+            res.status(200).json({
+              access_token: token,
+              id: data.id,
+              email: data.email,
+              full_name: data.full_name,
+              birth_date: data.birth_date,
+              gender: data.gender,
+              register_as: data.register_as,
+              main_card_showoff: data.main_card_showoff,
+              social_media_link: data.social_media_link,
+              portfolio_link: data.portfolio_link,
+              is_premium: data.is_premium,
+            });
           }
         }
       })
